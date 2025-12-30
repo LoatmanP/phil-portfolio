@@ -89,7 +89,7 @@ const Portfolio = () => {
     switch (activeTab) {
       case 'about':
         return (
-          <div style={{
+          <div className="about-section-responsive" style={{
             display: 'flex',
             gap: '80px',
             alignItems: 'flex-start',
@@ -97,14 +97,15 @@ const Portfolio = () => {
             margin: '0 auto',
           }}>
             {/* Profile Image */}
-            <div style={{ flexShrink: 0 }}>
-              <div style={{
+            <div className="about-profile-col" style={{ flexShrink: 0 }}>
+              <div className="about-profile-img-wrapper" style={{
                 width: '280px',
                 height: '280px',
                 borderRadius: '12px',
                 overflow: 'hidden',
                 border: '3px solid rgba(212, 165, 116, 0.3)',
                 boxShadow: '0 20px 50px rgba(0, 0, 0, 0.3)',
+                margin: 0,
               }}>
                 <img 
                   src="/profile.png" 
@@ -117,16 +118,15 @@ const Portfolio = () => {
                   }}
                 />
               </div>
-              
               {/* Contact Card */}
-              <div style={{
+              <div className="about-contact-card" style={{
                 marginTop: '24px',
                 padding: '20px',
                 backgroundColor: 'rgba(212, 165, 116, 0.05)',
                 borderRadius: '8px',
                 border: '1px solid rgba(212, 165, 116, 0.1)',
               }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                <div className="about-contact-row">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4a574" strokeWidth="2">
                     <rect x="2" y="4" width="20" height="16" rx="2"/>
                     <path d="M22 6l-10 7L2 6"/>
@@ -163,14 +163,9 @@ const Portfolio = () => {
                 </div>
               </div>
             </div>
-
             {/* Bio Content */}
-            <div style={{ flex: 1 }}>
-              <div style={{
-                fontSize: '17px',
-                lineHeight: 1.9,
-                color: '#9ca3af',
-              }}>
+            <div className="about-bio-col" style={{ flex: 1 }}>
+              <div className="about-bio-text">
                 <p style={{ marginBottom: '24px', marginTop: 0 }}>
                   I am an Assistant Vice President of AI with over a decade of experience spanning machine learning, data engineering, and inferential statistics. I specialize in leading the development and deployment of advanced AI systems—including Generative AI solutions, retrieval-augmented generation (RAG) pipelines, and large language model evaluation frameworks—to address complex, high-impact business challenges.
                 </p>
@@ -184,9 +179,8 @@ const Portfolio = () => {
                   I hold a PhD in Cognitive Science from Stony Brook University, along with advanced certification in quantitative methods. My research interests include judgment and decision making, experimental economics, quantitative finance, and computational modeling.
                 </p>
               </div>
-
               {/* Skills/Interests Tags */}
-              <div style={{ marginTop: '40px' }}>
+              <div className="about-skills-section">
                 <h4 style={{
                   fontSize: '12px',
                   fontWeight: '600',
@@ -223,179 +217,44 @@ const Portfolio = () => {
         return (
           <div style={{ maxWidth: '900px', margin: '0 auto' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              {/* Lincoln Financial Group - Assistant Vice President */}
-              <div style={{
-                padding: '32px',
-                borderRadius: '12px',
-                backgroundColor: 'rgba(212, 165, 116, 0.03)',
-                border: '1px solid rgba(212, 165, 116, 0.08)',
-                transition: 'all 0.3s ease',
-              }}>
-                <h4 style={{ fontSize: '20px', fontWeight: '600', color: '#e8e6e3', margin: '0 0 4px 0' }}>
-                  Assistant Vice President, AI & Data Science
-                </h4>
-                <p style={{ fontSize: '16px', color: '#d4a574', margin: 0 }}>Lincoln Financial Group · Boston, MA</p>
-                <span style={{ fontSize: '13px', color: '#6b7280', fontWeight: '500', backgroundColor: 'rgba(107, 114, 128, 0.1)', padding: '6px 12px', borderRadius: '6px', display: 'inline-block', marginTop: '8px' }}>
-                  11/2023 - Present
-                </span>
-                <ul style={{ fontSize: '15px', color: '#9ca3af', lineHeight: 1.7, margin: '16px 0 0 20px' }}>
-                  <li>Developed an internal Generative AI Chatbot for investment operations teams to quickly access investment information when interfacing with financial professionals</li>
-                  <li>Developed a real-time pricing tool to predict small-market retirement fund profitability, reducing pricing costs by 95%</li>
-                  <li>Engineered a record linkage algorithm and web application to manage a database of over 1M financial professionals in Salesforce</li>
-                </ul>
-              </div>
-              {/* Lincoln Financial Group - Principal Data Scientist */}
-              <div style={{
-                padding: '32px',
-                borderRadius: '12px',
-                backgroundColor: 'rgba(212, 165, 116, 0.03)',
-                border: '1px solid rgba(212, 165, 116, 0.08)',
-                transition: 'all 0.3s ease',
-              }}>
-                <h4 style={{ fontSize: '20px', fontWeight: '600', color: '#e8e6e3', margin: '0 0 4px 0' }}>
-                  Principal Data Scientist
-                </h4>
-                <p style={{ fontSize: '16px', color: '#d4a574', margin: 0 }}>Lincoln Financial Group · Boston, MA</p>
-                <span style={{ fontSize: '13px', color: '#6b7280', fontWeight: '500', backgroundColor: 'rgba(107, 114, 128, 0.1)', padding: '6px 12px', borderRadius: '6px', display: 'inline-block', marginTop: '8px' }}>
-                  04/2023 - 11/2023
-                </span>
-                <ul style={{ fontSize: '15px', color: '#9ca3af', lineHeight: 1.7, margin: '16px 0 0 20px' }}>
-                  <li>Served as technical supervisor and project manager of all data science projects</li>
-                  <li>Built a framework to standardize and operationalize all data science projects, increasing team productivity by 30%</li>
-                  <li>Created a pioneering customer-centric dashboard, providing comprehensive insights into acquisition, retention, and churn metrics across all verticals of the organization</li>
-                </ul>
-              </div>
-              {/* Lincoln Financial Group - Data Science Manager */}
-              <div style={{
-                padding: '32px',
-                borderRadius: '12px',
-                backgroundColor: 'rgba(212, 165, 116, 0.03)',
-                border: '1px solid rgba(212, 165, 116, 0.08)',
-                transition: 'all 0.3s ease',
-              }}>
-                <h4 style={{ fontSize: '20px', fontWeight: '600', color: '#e8e6e3', margin: '0 0 4px 0' }}>
-                  Data Science Manager
-                </h4>
-                <p style={{ fontSize: '16px', color: '#d4a574', margin: 0 }}>Lincoln Financial Group · Boston, MA</p>
-                <span style={{ fontSize: '13px', color: '#6b7280', fontWeight: '500', backgroundColor: 'rgba(107, 114, 128, 0.1)', padding: '6px 12px', borderRadius: '6px', display: 'inline-block', marginTop: '8px' }}>
-                  06/2021 - 04/2023
-                </span>
-                <ul style={{ fontSize: '15px', color: '#9ca3af', lineHeight: 1.7, margin: '16px 0 0 20px' }}>
-                  <li>Built machine learning retention models to reduce customer churn by 10%</li>
-                  <li>Developed a business retention data platform to automate business operations, saving $1M in annual operational costs</li>
-                  <li>Increased online customer registrations by 120% by creating the first Welcome to Lincoln email platform</li>
-                  <li>Led a team of three data scientists, overseeing the end-to-end life cycle and execution of data science projects</li>
-                </ul>
-              </div>
-              {/* Lincoln Financial Group - Data Scientist */}
-              <div style={{
-                padding: '32px',
-                borderRadius: '12px',
-                backgroundColor: 'rgba(212, 165, 116, 0.03)',
-                border: '1px solid rgba(212, 165, 116, 0.08)',
-                transition: 'all 0.3s ease',
-              }}>
-                <h4 style={{ fontSize: '20px', fontWeight: '600', color: '#e8e6e3', margin: '0 0 4px 0' }}>
-                  Data Scientist
-                </h4>
-                <p style={{ fontSize: '16px', color: '#d4a574', margin: 0 }}>Lincoln Financial Group · Boston, MA</p>
-                <span style={{ fontSize: '13px', color: '#6b7280', fontWeight: '500', backgroundColor: 'rgba(107, 114, 128, 0.1)', padding: '6px 12px', borderRadius: '6px', display: 'inline-block', marginTop: '8px' }}>
-                  10/2019 - 06/2021
-                </span>
-                <ul style={{ fontSize: '15px', color: '#9ca3af', lineHeight: 1.7, margin: '16px 0 0 20px' }}>
-                  <li>Built the first direct-to-consumer email platform to relay messages about COVID-19, achieving a 98% delivery rate and 45% open rate</li>
-                  <li>Developed several data engineering pipelines to connect digital, product, and customer data to understand buyer metrics and customer journeys</li>
-                </ul>
-              </div>
-              {/* Athenahealth - Senior User Experience Researcher */}
-              <div style={{
-                padding: '32px',
-                borderRadius: '12px',
-                backgroundColor: 'rgba(212, 165, 116, 0.03)',
-                border: '1px solid rgba(212, 165, 116, 0.08)',
-                transition: 'all 0.3s ease',
-              }}>
-                <h4 style={{ fontSize: '20px', fontWeight: '600', color: '#e8e6e3', margin: '0 0 4px 0' }}>
-                  Senior User Experience Researcher
-                </h4>
-                <p style={{ fontSize: '16px', color: '#d4a574', margin: 0 }}>Athenahealth · Watertown, MA</p>
-                <span style={{ fontSize: '13px', color: '#6b7280', fontWeight: '500', backgroundColor: 'rgba(107, 114, 128, 0.1)', padding: '6px 12px', borderRadius: '6px', display: 'inline-block', marginTop: '8px' }}>
-                  02/2018 - 10/2019
-                </span>
-                <ul style={{ fontSize: '15px', color: '#9ca3af', lineHeight: 1.7, margin: '16px 0 0 20px' }}>
-                  <li>Led the User Needs Scoring initiative to provide analytical insights on customer pain points</li>
-                  <li>Built and maintained data warehouses for all user experience research across all product teams</li>
-                  <li>Helped design a mobile payment system by employing behavioral economic principles</li>
-                  <li>Built explanatory attrition models using marketing and user experience research to create UX ROI metrics</li>
-                </ul>
-              </div>
-            </div>
-            {/* Skills Section */}
-            <div style={{ marginTop: '40px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#6b7280', marginBottom: '16px' }}>
-                Skills
-              </h4>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-                {["Data Science", "Generative AI", "Retrieval-Augmented Generation (RAG)", "Large Language Models (LLMs)", "Prompt Engineering", "Machine Learning", "API Development", "Python", "R", "SQL", "Flask", "HTML", "CSS", "Natural Language Processing", "Cloud Computing (AWS)", "Hive", "Spark", "PySpark", "Hadoop", "Tableau", "Dataiku", "KNIME", "Inferential Statistics", "A/B Testing", "ETL", "Data Engineering", "Exploratory Data Analysis", "Data Visualization", "Behavioral Economics", "Cognitive Science", "Quantitative UX Research", "Change Management", "Situational Leadership", "Management", "Design Thinking"].map((skill, i) => (
-                  <span
-                    key={i}
-                    style={{
-                      fontSize: '13px',
-                      padding: '8px 16px',
-                      backgroundColor: 'rgba(212, 165, 116, 0.1)',
-                      color: '#d4a574',
-                      borderRadius: '999px',
-                      fontWeight: '500',
-                    }}
-                  >
-                    {skill}
+              {experiences.map((experience, index) => (
+                <div key={index} style={{
+                  padding: '32px',
+                  borderRadius: '12px',
+                  backgroundColor: 'rgba(212, 165, 116, 0.03)',
+                  border: '1px solid rgba(212, 165, 116, 0.08)',
+                  transition: 'all 0.3s ease',
+                }}>
+                  <h4 style={{ fontSize: '20px', fontWeight: '600', color: '#e8e6e3', margin: '0 0 4px 0' }}>
+                    {experience.title}
+                  </h4>
+                  <p style={{ fontSize: '16px', color: '#d4a574', margin: 0 }}>{experience.company}</p>
+                  <span style={{ fontSize: '13px', color: '#6b7280', fontWeight: '500', backgroundColor: 'rgba(107, 114, 128, 0.1)', padding: '6px 12px', borderRadius: '6px', display: 'inline-block', marginTop: '8px' }}>
+                    {experience.period}
                   </span>
-                ))}
-              </div>
+                  <p style={{ fontSize: '15px', color: '#9ca3af', lineHeight: 1.7, margin: '16px 0 0' }}>
+                    {experience.description}
+                  </p>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginTop: '12px' }}>
+                    {experience.skills.map((skill, i) => (
+                      <span
+                        key={i}
+                        style={{
+                          fontSize: '11px',
+                          padding: '5px 12px',
+                          backgroundColor: 'rgba(212, 165, 116, 0.1)',
+                          color: '#d4a574',
+                          borderRadius: '999px',
+                          fontWeight: '500',
+                        }}
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
-            {/* Education Section */}
-            <div style={{ marginTop: '40px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#6b7280', marginBottom: '16px' }}>
-                Education
-              </h4>
-              <div style={{ fontSize: '15px', color: '#9ca3af', lineHeight: 1.7 }}>
-                <strong>Stony Brook University</strong><br />
-                PhD, Cognitive Science (09/2014 - 05/2019)<br />
-                Dissertation: Machine Learning Applications in Intertemporal Choice Behavior<br />
-                Advanced Certification: Quantitative Methods
-              </div>
-            </div>
-            <a
-              href="/resume.pdf"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                marginTop: '32px',
-                color: '#e8e6e3',
-                textDecoration: 'none',
-                fontSize: '15px',
-                fontWeight: '500',
-                padding: '12px 24px',
-                backgroundColor: 'rgba(212, 165, 116, 0.1)',
-                borderRadius: '8px',
-                border: '1px solid rgba(212, 165, 116, 0.2)',
-                transition: 'all 0.2s ease',
-              }}
-              onMouseEnter={e => {
-                e.target.style.backgroundColor = 'rgba(212, 165, 116, 0.15)';
-                e.target.style.borderColor = 'rgba(212, 165, 116, 0.3)';
-              }}
-              onMouseLeave={e => {
-                e.target.style.backgroundColor = 'rgba(212, 165, 116, 0.1)';
-                e.target.style.borderColor = 'rgba(212, 165, 116, 0.2)';
-              }}
-            >
-              View Full Résumé
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M7 17l9.2-9.2M17 17V7H7" />
-              </svg>
-            </a>
           </div>
         );
 
@@ -476,35 +335,11 @@ const Portfolio = () => {
           <div style={{ maxWidth: '900px', margin: '0 auto' }}>
             <h3 style={{ color: '#d4a574', marginBottom: '18px', fontSize: '20px' }}>Publications and Presentations</h3>
             <ul style={{ color: '#9ca3af', fontSize: '15px', lineHeight: 1.7, marginBottom: '32px' }}>
-              <li>Loatman, P.A. (2017, March). Individual Differences in Susceptibility to the Attraction, Compromise, and Similar Effect. Poster presentation at Eastern Psychological Association Conference, Boston, MA</li>
-              <li>Loatman, P.A. (2017, March). Irrational Intertemporal Choice. Temporal Decision Making Symposium, Eastern Psychological Association Conference, Boston, MA</li>
-              <li>Loatman, P.A. (2017, March). The Difference Model of Intertemporal Choice. Presentation at the Cognitive Science Brown Bag Colloquium, Stony Brook University, N.Y</li>
-              <li>Loatman, P.A. (2016, November). Contextual Preference Reversals in Intertemporal Choice. Poster presentation at the Society for Judgment and Decision Making Conference, Boston, M.A</li>
-              <li>Loatman, P.A. (2016, March). Contextual Preference Reversals in Intertemporal Choice. Presentation at the Cognitive Science Brown Bag Colloquium, Stony Brook University, N.Y</li>
-              <li>Loatman, P.A., Luhmann C. C. (2016, March). The Attraction Effect Influences Preferences and Discount Rates in Intertemporal Choice. Poster Presentation at the Eastern Psychological Association Conference, New York, N.Y.</li>
-              <li>Whitlow Jr, J. W., & Loatman, P. A. (2015). When patterning discriminations are harder than biconditional ones: A cue constellation approach. Journal of Experimental Psychology: Animal Learning and Cognition, 41(4), 354 -370.</li>
-              <li>Loatman, P.A. (2015, May). The Decoy Effect and Intertemporal Choice. Presentation at the Cognitive Science Brown Bag Colloquium—Stony Brook University, N.Y.</li>
-              <li>Loatman, P. A. (2013, May). Can Neuroscience Transform the Law? Poster presentation at the Association for Psychological Science Conference, Washington D.C.</li>
-              <li>Loatman, P. A. (2013, May). The Psychology of Culpability in the 21st Century, Presentation at the Northeastern Evolutionary Psychology Society Conference, Lebanon Valley College, P.A</li>
-              <li>Loatman, P. A., & J.W. Whitlow (2013, March). Comparing Negative Patterning and Biconditional Discrimination in a Simulated Foraging Task, Poser presentation at the Eastern Psychological Association Conference, New York, N.Y.</li>
-              <li>J.W Whitlow., & Loatman, P. A. (2013, March). Finding Features in a Configural World. Presentation at the Comparative Cognition Conference, Melbourne, F.L.</li>
-              <li>Loatman, P. A. (2013, March). Patterning Discrimination and Foraging Behavior: An Evolutionary Analysis. Poster Presentation at the Comparative Cognition Conference, Melbourne, F.L.</li>
-              <li>Whitlow, J.W., & Loatman, P. A. (2012, March). Negative Patterning is Harder than Biconditional Discriminations, Poster presentation at the Eastern Psychological Association Conference, Pittsburgh, P.A.</li>
-              <li>Gaer, E., Loatman, P. A. (2010, May). Reasonable Person, Woman, or Victim in Sexual Harassment Law, Poster presentation at the Association for Psychological Science Conference, Boston, M.A.</li>
-            </ul>
-            <h3 style={{ color: '#d4a574', marginBottom: '18px', fontSize: '20px' }}>Teaching Experience</h3>
-            <ul style={{ color: '#9ca3af', fontSize: '15px', lineHeight: 1.7 }}>
-              <li>Instructor—Research and Writing in Psychology, Fall 2015</li>
-              <li>Instructor—Analysis of Variance: Computer Applications, Summer 2017</li>
-              <li>Instructor–Human Problem Solving, Winter 2017</li>
-              <li>Teaching Assistant—Developmental Psychology, Fall 2017</li>
-              <li>Teaching Assistant—Judgment and Decision Making, Spring 2017</li>
-              <li>Teaching Assistant—Health Psychology, Fall 2016</li>
-              <li>Teaching Assistant—Memory, Spring 2016</li>
-              <li>Teaching Assistant—Introduction to Psychology, Summer, 2015</li>
-              <li>Teaching Assistant—Biological Psychology, Spring 2015</li>
-              <li>Teaching Assistant—Statistics in Psychology, Fall 2014</li>
-              <li>Teaching Assistant—Cognition Processes, Spring 2012</li>
+              {publications.map((publication, index) => (
+                <li key={index}>
+                  <strong>{publication.year}</strong> - {publication.title} ({publication.type}) - {publication.venue}
+                </li>
+              ))}
             </ul>
           </div>
         );
@@ -686,6 +521,39 @@ const Portfolio = () => {
           nav {
             flex-wrap: wrap;
             justify-content: center;
+          }
+        }
+
+        /* --- About Section Mobile Styles --- */
+        @media (max-width: 700px) {
+          .about-section-responsive {
+            flex-direction: column !important;
+            gap: 32px !important;
+            align-items: stretch !important;
+            padding: 0 0 0 0 !important;
+          }
+          .about-profile-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 0;
+          }
+          .about-profile-img-wrapper {
+            width: 160px !important;
+            height: 160px !important;
+            margin: 0 auto !important;
+          }
+          .about-contact-card {
+            margin-top: 16px !important;
+            padding: 14px !important;
+            width: 100%;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          .about-bio-col {
+            margin-top: 0 !important;
+            font-size: 15px !important;
           }
         }
       `}</style>
