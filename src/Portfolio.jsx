@@ -67,6 +67,96 @@ const Portfolio = () => {
   const publications = [
     {
       year: '2017',
+      title: 'Individual Differences in Susceptibility to the Attraction, Compromise, and Similar Effect',
+      venue: 'Eastern Psychological Association Conference, Boston, MA',
+      type: 'Poster Presentation',
+    },
+    {
+      year: '2017',
+      title: 'Irrational Intertemporal Choice',
+      venue: 'Temporal Decision Making Symposium, Eastern Psychological Association Conference, Boston, MA',
+      type: 'Presentation',
+    },
+    {
+      year: '2017',
+      title: 'The Difference Model of Intertemporal Choice',
+      venue: 'Cognitive Science Brown Bag Colloquium, Stony Brook University, NY',
+      type: 'Presentation',
+    },
+    {
+      year: '2016',
+      title: 'Contextual Preference Reversals in Intertemporal Choice',
+      venue: 'Society for Judgment and Decision Making Conference, Boston, MA',
+      type: 'Poster Presentation',
+    },
+    {
+      year: '2016',
+      title: 'Contextual Preference Reversals in Intertemporal Choice',
+      venue: 'Cognitive Science Brown Bag Colloquium, Stony Brook University, NY',
+      type: 'Presentation',
+    },
+    {
+      year: '2016',
+      title: 'The Attraction Effect Influences Preferences and Discount Rates in Intertemporal Choice',
+      venue: 'Eastern Psychological Association Conference, New York, NY',
+      type: 'Poster Presentation',
+    },
+    {
+      year: '2015',
+      title: 'When patterning discriminations are harder than biconditional ones: A cue constellation approach',
+      venue: 'Journal of Experimental Psychology: Animal Learning and Cognition, 41(4), 354-370',
+      type: 'Publication',
+    },
+    {
+      year: '2015',
+      title: 'The Decoy Effect and Intertemporal Choice',
+      venue: 'Cognitive Science Brown Bag Colloquium, Stony Brook University, NY',
+      type: 'Presentation',
+    },
+    {
+      year: '2013',
+      title: 'Can Neuroscience Transform the Law?',
+      venue: 'Association for Psychological Science Conference, Washington D.C.',
+      type: 'Poster Presentation',
+    },
+    {
+      year: '2013',
+      title: 'The Psychology of Culpability in the 21st Century',
+      venue: 'Northeastern Evolutionary Psychology Society Conference, Lebanon Valley College, PA',
+      type: 'Presentation',
+    },
+    {
+      year: '2013',
+      title: 'Comparing Negative Patterning and Biconditional Discrimination in a Simulated Foraging Task',
+      venue: 'Eastern Psychological Association Conference, New York, NY',
+      type: 'Poster Presentation',
+    },
+    {
+      year: '2013',
+      title: 'Finding Features in a Configural World',
+      venue: 'Comparative Cognition Conference, Melbourne, FL',
+      type: 'Presentation',
+    },
+    {
+      year: '2013',
+      title: 'Patterning Discrimination and Foraging Behavior: An Evolutionary Analysis',
+      venue: 'Comparative Cognition Conference, Melbourne, FL',
+      type: 'Poster Presentation',
+    },
+    {
+      year: '2012',
+      title: 'Negative Patterning is Harder than Biconditional Discriminations',
+      venue: 'Eastern Psychological Association Conference, Pittsburgh, PA',
+      type: 'Poster Presentation',
+    },
+    {
+      year: '2010',
+      title: 'Reasonable Person, Woman, or Victim in Sexual Harassment Law',
+      venue: 'Association for Psychological Science Conference, Boston, MA',
+      type: 'Poster Presentation',
+    },
+    {
+      year: '2017',
       title: 'Individual Differences in Susceptibility to Framing Effects',
       venue: 'Cognitive Science Society Annual Conference',
       type: 'Presentation',
@@ -167,7 +257,7 @@ const Portfolio = () => {
             <div className="about-bio-col" style={{ flex: 1 }}>
               <div className="about-bio-text">
                 <p style={{ marginBottom: '24px', marginTop: 0 }}>
-                  I am an Assistant Vice President of AI with over a decade of experience spanning machine learning, data engineering, and inferential statistics. I specialize in leading the development and deployment of advanced AI systems—including Generative AI solutions, retrieval-augmented generation (RAG) pipelines, and large language model evaluation frameworks—to address complex, high-impact business challenges.
+                  I am an Assistant Vice President of AI with over a decade of experience in AI, machine learning, data engineering, research, and inferential statistics. I specialize in leading the development and deployment of advanced AI systems—including Generative AI solutions, retrieval-augmented generation (RAG) pipelines, and large language model evaluation frameworks—to address complex, high-impact business challenges.
                 </p>
                 <p style={{ marginBottom: '24px' }}>
                   Trained as a cognitive scientist, my work is deeply informed by a longstanding interest in the interaction between human decision-making and artificial intelligence. A core focus of my approach is applying design thinking and data storytelling to ensure that data science innovations translate into strategic organizational value.
@@ -217,43 +307,93 @@ const Portfolio = () => {
         return (
           <div style={{ maxWidth: '900px', margin: '0 auto' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              {experiences.map((experience, index) => (
-                <div key={index} style={{
-                  padding: '32px',
-                  borderRadius: '12px',
-                  backgroundColor: 'rgba(212, 165, 116, 0.03)',
-                  border: '1px solid rgba(212, 165, 116, 0.08)',
-                  transition: 'all 0.3s ease',
-                }}>
-                  <h4 style={{ fontSize: '20px', fontWeight: '600', color: '#e8e6e3', margin: '0 0 4px 0' }}>
-                    {experience.title}
-                  </h4>
-                  <p style={{ fontSize: '16px', color: '#d4a574', margin: 0 }}>{experience.company}</p>
-                  <span style={{ fontSize: '13px', color: '#6b7280', fontWeight: '500', backgroundColor: 'rgba(107, 114, 128, 0.1)', padding: '6px 12px', borderRadius: '6px', display: 'inline-block', marginTop: '8px' }}>
-                    {experience.period}
+              {/* Lincoln Financial Group - Assistant Vice President */}
+              <div style={{ padding: '32px', borderRadius: '12px', backgroundColor: 'rgba(212, 165, 116, 0.03)', border: '1px solid rgba(212, 165, 116, 0.08)' }}>
+                <h4 style={{ fontSize: '20px', fontWeight: '600', color: '#e8e6e3', margin: '0 0 4px 0' }}>Assistant Vice President</h4>
+                <p style={{ fontSize: '16px', color: '#d4a574', margin: 0 }}>Lincoln Financial Group, Boston, MA</p>
+                <span style={{ fontSize: '13px', color: '#6b7280', fontWeight: '500', backgroundColor: 'rgba(107, 114, 128, 0.1)', padding: '6px 12px', borderRadius: '6px', display: 'inline-block', marginTop: '8px' }}>11/2023 – Present</span>
+                <ul style={{ fontSize: '15px', color: '#9ca3af', margin: '16px 0 0 18px', lineHeight: 1.7 }}>
+                  <li>Developed an internal Generative AI Chatbot for investment operations teams to quickly access investment information when interfacing with financial professionals</li>
+                  <li>Developed a real-time pricing tool to predict small-market retirement fund profitability, reducing pricing costs by 95%</li>
+                  <li>Engineered a record linkage algorithm and web application to manage a database of over 1M financial professionals in Salesforce</li>
+                </ul>
+              </div>
+              {/* Lincoln Financial Group - Principal Data Scientist */}
+              <div style={{ padding: '32px', borderRadius: '12px', backgroundColor: 'rgba(212, 165, 116, 0.03)', border: '1px solid rgba(212, 165, 116, 0.08)' }}>
+                <h4 style={{ fontSize: '20px', fontWeight: '600', color: '#e8e6e3', margin: '0 0 4px 0' }}>Principal Data Scientist</h4>
+                <p style={{ fontSize: '16px', color: '#d4a574', margin: 0 }}>Lincoln Financial Group, Boston, MA</p>
+                <span style={{ fontSize: '13px', color: '#6b7280', fontWeight: '500', backgroundColor: 'rgba(107, 114, 128, 0.1)', padding: '6px 12px', borderRadius: '6px', display: 'inline-block', marginTop: '8px' }}>04/2023 – 11/2023</span>
+                <ul style={{ fontSize: '15px', color: '#9ca3af', margin: '16px 0 0 18px', lineHeight: 1.7 }}>
+                  <li>Served as technical supervisor and project manager of all data science projects</li>
+                  <li>Built a framework to standardize and operationalize all data science projects, increasing team productivity by 30%</li>
+                  <li>Created a pioneering customer-centric dashboard, providing comprehensive insights into acquisition, retention, and churn metrics across all verticals of the organization</li>
+                </ul>
+              </div>
+              {/* Lincoln Financial Group - Data Science Manager */}
+              <div style={{ padding: '32px', borderRadius: '12px', backgroundColor: 'rgba(212, 165, 116, 0.03)', border: '1px solid rgba(212, 165, 116, 0.08)' }}>
+                <h4 style={{ fontSize: '20px', fontWeight: '600', color: '#e8e6e3', margin: '0 0 4px 0' }}>Data Science Manager</h4>
+                <p style={{ fontSize: '16px', color: '#d4a574', margin: 0 }}>Lincoln Financial Group, Boston, MA</p>
+                <span style={{ fontSize: '13px', color: '#6b7280', fontWeight: '500', backgroundColor: 'rgba(107, 114, 128, 0.1)', padding: '6px 12px', borderRadius: '6px', display: 'inline-block', marginTop: '8px' }}>06/2021 – 04/2023</span>
+                <ul style={{ fontSize: '15px', color: '#9ca3af', margin: '16px 0 0 18px', lineHeight: 1.7 }}>
+                  <li>Built machine learning retention models to reduce customer churn by 10%</li>
+                  <li>Developed a business retention data platform to automate business operations, saving $1M in annual operational costs</li>
+                  <li>Increased online customer registrations by 120% by creating the first Welcome to Lincoln email platform</li>
+                  <li>Led a team of three data scientists, overseeing the end-to-end life cycle and execution of data science projects</li>
+                </ul>
+              </div>
+              {/* Lincoln Financial Group - Data Scientist */}
+              <div style={{ padding: '32px', borderRadius: '12px', backgroundColor: 'rgba(212, 165, 116, 0.03)', border: '1px solid rgba(212, 165, 116, 0.08)' }}>
+                <h4 style={{ fontSize: '20px', fontWeight: '600', color: '#e8e6e3', margin: '0 0 4px 0' }}>Data Scientist</h4>
+                <p style={{ fontSize: '16px', color: '#d4a574', margin: 0 }}>Lincoln Financial Group, Boston, MA</p>
+                <span style={{ fontSize: '13px', color: '#6b7280', fontWeight: '500', backgroundColor: 'rgba(107, 114, 128, 0.1)', padding: '6px 12px', borderRadius: '6px', display: 'inline-block', marginTop: '8px' }}>10/2019 – 06/2021</span>
+                <ul style={{ fontSize: '15px', color: '#9ca3af', margin: '16px 0 0 18px', lineHeight: 1.7 }}>
+                  <li>Built the first direct-to-consumer email platform to relay messages about COVID-19, achieving a 98% delivery rate and 45% open rate</li>
+                  <li>Developed several data engineering pipelines to connect digital, product, and customer data to understand buyer metrics and customer journeys</li>
+                </ul>
+              </div>
+              {/* Athenahealth - Senior User Experience Researcher */}
+              <div style={{ padding: '32px', borderRadius: '12px', backgroundColor: 'rgba(212, 165, 116, 0.03)', border: '1px solid rgba(212, 165, 116, 0.08)' }}>
+                <h4 style={{ fontSize: '20px', fontWeight: '600', color: '#e8e6e3', margin: '0 0 4px 0' }}>Senior User Experience Researcher</h4>
+                <p style={{ fontSize: '16px', color: '#d4a574', margin: 0 }}>Athenahealth, Watertown, MA</p>
+                <span style={{ fontSize: '13px', color: '#6b7280', fontWeight: '500', backgroundColor: 'rgba(107, 114, 128, 0.1)', padding: '6px 12px', borderRadius: '6px', display: 'inline-block', marginTop: '8px' }}>02/2018 – 10/2019</span>
+                <ul style={{ fontSize: '15px', color: '#9ca3af', margin: '16px 0 0 18px', lineHeight: 1.7 }}>
+                  <li>Led the User Needs Scoring initiative to provide analytical insights on customer pain points</li>
+                  <li>Built and maintained data warehouses for all user experience research across all product teams</li>
+                  <li>Helped design a mobile payment system by employing behavioral economic principles</li>
+                  <li>Built explanatory attrition models using marketing and user experience research to create UX ROI metrics</li>
+                </ul>
+              </div>
+            </div>
+            {/* Skills Section */}
+            <div style={{ marginTop: '40px' }}>
+              <h4 style={{ fontSize: '16px', color: '#d4a574', marginBottom: '12px', fontWeight: 600 }}>Skills</h4>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                {["Data Science", "Generative AI", "Retrieval-Augmented Generation (RAG)", "Large Language Models (LLMs)", "Prompt Engineering", "Machine Learning", "API Development", "Python", "R", "SQL", "Flask", "HTML", "CSS", "Natural Language Processing", "Cloud Computing (AWS)", "Hive", "Spark", "PySpark", "Hadoop", "Tableau", "Dataiku", "KNIME", "Inferential Statistics", "A/B Testing", "ETL", "Data Engineering", "Exploratory Data Analysis", "Data Visualization", "Behavioral Economics", "Cognitive Science", "Quantitative UX Research", "Change Management", "Situational Leadership", "Management", "Design Thinking"].map((skill, i) => (
+                  <span
+                    key={i}
+                    style={{
+                      fontSize: '13px',
+                      padding: '8px 16px',
+                      backgroundColor: 'rgba(212, 165, 116, 0.1)',
+                      color: '#d4a574',
+                      borderRadius: '999px',
+                      fontWeight: '500',
+                    }}
+                  >
+                    {skill}
                   </span>
-                  <p style={{ fontSize: '15px', color: '#9ca3af', lineHeight: 1.7, margin: '16px 0 0' }}>
-                    {experience.description}
-                  </p>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginTop: '12px' }}>
-                    {experience.skills.map((skill, i) => (
-                      <span
-                        key={i}
-                        style={{
-                          fontSize: '11px',
-                          padding: '5px 12px',
-                          backgroundColor: 'rgba(212, 165, 116, 0.1)',
-                          color: '#d4a574',
-                          borderRadius: '999px',
-                          fontWeight: '500',
-                        }}
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+            {/* Education Section */}
+            <div style={{ marginTop: '32px' }}>
+              <h4 style={{ fontSize: '16px', color: '#d4a574', marginBottom: '12px', fontWeight: 600 }}>Education</h4>
+              <div style={{ color: '#9ca3af', fontSize: '15px', lineHeight: 1.7 }}>
+                <strong>Stony Brook University</strong><br />
+                PhD, Cognitive Science (09/2014 – 05/2019)<br />
+                Dissertation: Machine Learning Applications in Intertemporal Choice Behavior<br />
+                Advanced Certification: Quantitative Methods
+              </div>
             </div>
           </div>
         );
@@ -341,6 +481,20 @@ const Portfolio = () => {
                 </li>
               ))}
             </ul>
+            <h3 style={{ color: '#d4a574', marginBottom: '12px', fontSize: '18px' }}>Teaching Experience</h3>
+            <ul style={{ color: '#9ca3af', fontSize: '15px', lineHeight: 1.7 }}>
+              <li>Instructor—Research and Writing in Psychology, Fall 2015</li>
+              <li>Instructor—Analysis of Variance: Computer Applications, Summer 2017</li>
+              <li>Instructor–Human Problem Solving, Winter 2017</li>
+              <li>Teaching Assistant—Developmental Psychology, Fall 2017</li>
+              <li>Teaching Assistant—Judgment and Decision Making, Spring 2017</li>
+              <li>Teaching Assistant—Health Psychology, Fall 2016</li>
+              <li>Teaching Assistant—Memory, Spring 2016</li>
+              <li>Teaching Assistant—Introduction to Psychology, Summer 2015</li>
+              <li>Teaching Assistant—Biological Psychology, Spring 2015</li>
+              <li>Teaching Assistant—Statistics in Psychology, Fall 2014</li>
+              <li>Teaching Assistant—Cognition Processes, Spring 2012</li>
+            </ul>
           </div>
         );
 
@@ -390,77 +544,70 @@ const Portfolio = () => {
         position: 'sticky',
         top: 0,
         zIndex: 100,
-        backgroundColor: 'rgba(26, 47, 45, 0.85)',
-        backdropFilter: 'blur(12px)',
+        backgroundColor: '#1a2f2d',
+        padding: '16px 48px',
         borderBottom: '1px solid rgba(212, 165, 116, 0.1)',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
       }}>
-        <div style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
-          padding: '20px 48px',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}>
-          {/* Logo/Name */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <h1 style={{
-              fontSize: '24px',
-              fontWeight: '700',
-              color: '#d4a574',
-              margin: 0,
-              letterSpacing: '-0.5px',
-            }}>
-              Phil Loatman
-            </h1>
-            <span style={{
-              fontSize: '12px',
-              color: '#6b7280',
-              letterSpacing: '1px',
-              textTransform: 'uppercase',
-              borderLeft: '1px solid rgba(212, 165, 116, 0.2)',
-              paddingLeft: '16px',
-            }}>
-              Cognitive Scientist | AI Engineering
-            </span>
-          </div>
-
-          {/* Navigation Tabs */}
-          <nav style={{ display: 'flex', gap: '8px' }}>
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                style={{
-                  padding: '10px 20px',
-                  fontSize: '14px',
-                  fontWeight: '500',
-                  color: activeTab === tab.id ? '#e8e6e3' : '#6b7280',
-                  backgroundColor: activeTab === tab.id ? 'rgba(212, 165, 116, 0.15)' : 'transparent',
-                  border: 'none',
-                  borderRadius: '8px',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  fontFamily: 'inherit',
-                }}
-                onMouseEnter={(e) => {
-                  if (activeTab !== tab.id) {
-                    e.target.style.backgroundColor = 'rgba(212, 165, 116, 0.08)';
-                    e.target.style.color = '#9ca3af';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (activeTab !== tab.id) {
-                    e.target.style.backgroundColor = 'transparent';
-                    e.target.style.color = '#6b7280';
-                  }
-                }}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </nav>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <h1 style={{
+            fontSize: '24px',
+            fontWeight: '700',
+            color: '#d4a574',
+            margin: 0,
+            letterSpacing: '-0.5px',
+          }}>
+            Phil Loatman
+          </h1>
+          <span style={{
+            fontSize: '12px',
+            color: '#6b7280',
+            letterSpacing: '1px',
+            textTransform: 'uppercase',
+            borderLeft: '1px solid rgba(212, 165, 116, 0.2)',
+            paddingLeft: '16px',
+          }}>
+            Cognitive Scientist | AI Engineering
+          </span>
         </div>
+
+        {/* Navigation Tabs */}
+        <nav style={{ display: 'flex', gap: '8px' }}>
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              style={{
+                padding: '10px 20px',
+                fontSize: '14px',
+                fontWeight: '500',
+                color: activeTab === tab.id ? '#e8e6e3' : '#6b7280',
+                backgroundColor: activeTab === tab.id ? 'rgba(212, 165, 116, 0.15)' : 'transparent',
+                border: 'none',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                fontFamily: 'inherit',
+              }}
+              onMouseEnter={(e) => {
+                if (activeTab !== tab.id) {
+                  e.target.style.backgroundColor = 'rgba(212, 165, 116, 0.08)';
+                  e.target.style.color = '#9ca3af';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (activeTab !== tab.id) {
+                  e.target.style.backgroundColor = 'transparent';
+                  e.target.style.color = '#6b7280';
+                }
+              }}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </nav>
       </header>
 
       {/* Main Content */}
