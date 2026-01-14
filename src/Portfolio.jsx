@@ -266,7 +266,7 @@ const Portfolio = () => {
                   Currently, I lead AI initiatives at <span style={{ color: '#d4a574' }}>Lincoln Financial Group</span>, serving as the technical lead for enterprise generative AI projects. In this role, I guide cross-functional teams from research and experimentation through production deployment, ensuring rigor, scalability, and responsible AI practices.
                 </p>
                 <p style={{ marginBottom: '24px' }}>
-                  I hold a PhD in Cognitive Science from Stony Brook University, along with advanced certification in quantitative methods. My research interests include judgment and decision making, experimental economics, quantitative finance, and computational modeling.
+                  I hold a PhD in Cognitive Science from Stony Brook University, along with advanced certification in quantitative methods. My research and dissertation focused on bridging experimental and behavioral economics with machine learning.
                 </p>
               </div>
               {/* Skills/Interests Tags */}
