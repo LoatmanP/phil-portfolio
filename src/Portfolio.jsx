@@ -62,6 +62,12 @@ const Portfolio = () => {
       tech: ['Python', 'Dash', 'Pandas', 'Public Health Data'],
       link: '#',
     },
+    {
+      title: 'Mass School Rankings',
+      description: 'Interactive platform for exploring and comparing Massachusetts public school performance data and rankings.',
+      tech: ['Data Visualization', 'Analytics', 'Education Data'],
+      link: 'https://www.massschoolrankings.com/',
+    },
   ];
 
   const publications = [
