@@ -45,6 +45,12 @@ const Portfolio = () => {
 
   const projects = [
     {
+      title: 'Mass School Rankings',
+      description: 'Interactive platform for exploring and comparing Massachusetts public school performance data and rankings.',
+      tech: ['Data Visualization', 'Analytics', 'Education Data'],
+      link: 'https://www.massschoolrankings.com/',
+    },
+    {
       title: 'Predicting Time Preferences',
       description: 'Machine learning models predicting intertemporal choice behavior and its associations with health and financial outcomes.',
       tech: ['Python', 'Scikit-learn', 'Behavioral Modeling'],
@@ -61,12 +67,6 @@ const Portfolio = () => {
       description: 'Real-time dashboard tracking Covid-19 metrics across Greater Boston, featuring wastewater analysis and trend visualization.',
       tech: ['Python', 'Dash', 'Pandas', 'Public Health Data'],
       link: '#',
-    },
-    {
-      title: 'Mass School Rankings',
-      description: 'Interactive platform for exploring and comparing Massachusetts public school performance data and rankings.',
-      tech: ['Data Visualization', 'Analytics', 'Education Data'],
-      link: 'https://www.massschoolrankings.com/',
     },
   ];
 
