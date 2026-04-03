@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import TimePreferences from './TimePreferences';
 
 const Portfolio = () => {
   const [activeTab, setActiveTab] = useState('about');
+  const [showTimePrefs, setShowTimePrefs] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -52,9 +54,10 @@ const Portfolio = () => {
     },
     {
       title: 'Predicting Time Preferences',
-      description: 'Machine learning models predicting intertemporal choice behavior and its associations with health and financial outcomes.',
-      tech: ['Python', 'Scikit-learn', 'Behavioral Modeling'],
-      link: '#',
+      description: 'Interactive discount rate estimator — answer 24 intertemporal choices and see how exponential and hyperbolic models predict your behavior.',
+      tech: ['React', 'Behavioral Economics', 'Computational Modeling'],
+      link: 'time-preferences',
+      interactive: true,
     },
     {
       title: 'Interactive Resume Builder',
@@ -405,73 +408,81 @@ const Portfolio = () => {
         );
 
       case 'projects':
+        if (showTimePrefs) {
+          return <TimePreferences onBack={() => setShowTimePrefs(false)} />;
+        }
         return (
           <div style={{ maxWidth: '900px', margin: '0 auto' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              {projects.map((project, index) => (
-                <a
-                  key={index}
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    padding: '28px',
-                    borderRadius: '12px',
-                    backgroundColor: 'rgba(212, 165, 116, 0.03)',
-                    border: '1px solid rgba(212, 165, 116, 0.08)',
-                    transition: 'all 0.3s ease',
-                    textDecoration: 'none',
-                    display: 'block',
-                  }}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.borderColor = 'rgba(212, 165, 116, 0.15)';
-                    e.currentTarget.style.transform = 'translateY(-4px)';
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.borderColor = 'rgba(212, 165, 116, 0.08)';
-                    e.currentTarget.style.transform = 'translateY(0)';
-                  }}
-                >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4a574" strokeWidth="2">
-                      <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
-                    </svg>
-                    <h4 style={{
-                      fontSize: '18px',
-                      fontWeight: '600',
-                      color: '#e8e6e3',
-                      margin: 0,
+              {projects.map((project, index) => {
+                const Tag = project.interactive ? 'div' : 'a';
+                const extraProps = project.interactive
+                  ? { onClick: () => setShowTimePrefs(true), role: 'button', tabIndex: 0 }
+                  : { href: project.link, target: '_blank', rel: 'noopener noreferrer' };
+                return (
+                  <Tag
+                    key={index}
+                    {...extraProps}
+                    style={{
+                      padding: '28px',
+                      borderRadius: '12px',
+                      backgroundColor: 'rgba(212, 165, 116, 0.03)',
+                      border: '1px solid rgba(212, 165, 116, 0.08)',
+                      transition: 'all 0.3s ease',
+                      textDecoration: 'none',
+                      display: 'block',
+                      cursor: 'pointer',
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.borderColor = 'rgba(212, 165, 116, 0.15)';
+                      e.currentTarget.style.transform = 'translateY(-4px)';
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.borderColor = 'rgba(212, 165, 116, 0.08)';
+                      e.currentTarget.style.transform = 'translateY(0)';
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4a574" strokeWidth="2">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+                      </svg>
+                      <h4 style={{
+                        fontSize: '18px',
+                        fontWeight: '600',
+                        color: '#e8e6e3',
+                        margin: 0,
+                      }}>
+                        {project.title}
+                      </h4>
+                    </div>
+                    <p style={{
+                      fontSize: '14px',
+                      color: '#9ca3af',
+                      lineHeight: 1.7,
+                      margin: '0 0 20px 0',
                     }}>
-                      {project.title}
-                    </h4>
-                  </div>
-                  <p style={{
-                    fontSize: '14px',
-                    color: '#9ca3af',
-                    lineHeight: 1.7,
-                    margin: '0 0 20px 0',
-                  }}>
-                    {project.description}
-                  </p>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                    {project.tech.map((tech, i) => (
-                      <span
-                        key={i}
-                        style={{
-                          fontSize: '11px',
-                          padding: '5px 12px',
-                          backgroundColor: 'rgba(212, 165, 116, 0.1)',
-                          color: '#d4a574',
-                          borderRadius: '999px',
-                          fontWeight: '500',
-                        }}
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </a>
-              ))}
+                      {project.description}
+                    </p>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                      {project.tech.map((tech, i) => (
+                        <span
+                          key={i}
+                          style={{
+                            fontSize: '11px',
+                            padding: '5px 12px',
+                            backgroundColor: 'rgba(212, 165, 116, 0.1)',
+                            color: '#d4a574',
+                            borderRadius: '999px',
+                            fontWeight: '500',
+                          }}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </Tag>
+                );
+              })}
             </div>
           </div>
         );
