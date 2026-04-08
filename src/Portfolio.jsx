@@ -1,10 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import TimePreferences from './TimePreferences';
+import ChoiceAnomalies from './ChoiceAnomalies';
 
 const Portfolio = () => {
   const [activeTab, setActiveTab] = useState('about');
   const [showTimePrefs, setShowTimePrefs] = useState(false);
+  const [showAnomalies, setShowAnomalies] = useState(false);
+  const [fadeClass, setFadeClass] = useState('fade-in');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const switchTab = (tab) => {
+    setFadeClass('fade-out');
+    setTimeout(() => {
+      setActiveTab(tab);
+      setShowTimePrefs(false);
+      setShowAnomalies(false);
+      setFadeClass('fade-in');
+    }, 200);
+  };
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -60,16 +73,11 @@ const Portfolio = () => {
       interactive: true,
     },
     {
-      title: 'Interactive Resume Builder',
-      description: 'A guide and toolkit for creating dynamic, interactive resumes using Plotly visualizations in Python.',
-      tech: ['Python', 'Plotly', 'Data Visualization'],
-      link: '#',
-    },
-    {
-      title: 'Covid-19 Dashboard',
-      description: 'Real-time dashboard tracking Covid-19 metrics across Greater Boston, featuring wastewater analysis and trend visualization.',
-      tech: ['Python', 'Dash', 'Pandas', 'Public Health Data'],
-      link: '#',
+      title: 'Intertemporal Choice Anomalies',
+      description: 'Experience stationarity violations and the magnitude effect firsthand — then see how computational models predict your "irrational" behavior.',
+      tech: ['React', 'Cognitive Science', 'Cross-Validation', 'Decision Science'],
+      link: 'choice-anomalies',
+      interactive: true,
     },
   ];
 
@@ -411,13 +419,19 @@ const Portfolio = () => {
         if (showTimePrefs) {
           return <TimePreferences onBack={() => setShowTimePrefs(false)} />;
         }
+        if (showAnomalies) {
+          return <ChoiceAnomalies onBack={() => setShowAnomalies(false)} />;
+        }
         return (
           <div style={{ maxWidth: '900px', margin: '0 auto' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               {projects.map((project, index) => {
                 const Tag = project.interactive ? 'div' : 'a';
                 const extraProps = project.interactive
-                  ? { onClick: () => setShowTimePrefs(true), role: 'button', tabIndex: 0 }
+                  ? { onClick: () => {
+                      if (project.link === 'time-preferences') setShowTimePrefs(true);
+                      else if (project.link === 'choice-anomalies') setShowAnomalies(true);
+                    }, role: 'button', tabIndex: 0 }
                   : { href: project.link, target: '_blank', rel: 'noopener noreferrer' };
                 return (
                   <Tag
@@ -595,7 +609,7 @@ const Portfolio = () => {
           {tabs.map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
+              onClick={() => switchTab(tab.id)}
               style={{
                 padding: '10px 20px',
                 fontSize: '14px',
@@ -634,7 +648,9 @@ const Portfolio = () => {
         padding: '60px 48px 80px',
         minHeight: 'calc(100vh - 200px)',
       }}>
-        {renderContent()}
+        <div className={fadeClass}>
+          {renderContent()}
+        </div>
       </main>
 
       {/* Footer */}
@@ -674,6 +690,24 @@ const Portfolio = () => {
         ::selection {
           background-color: rgba(212, 165, 116, 0.3);
           color: #e8e6e3;
+        }
+
+        .fade-in {
+          animation: fadeIn 0.3s ease-in forwards;
+        }
+
+        .fade-out {
+          animation: fadeOut 0.2s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(12px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeOut {
+          from { opacity: 1; transform: translateY(0); }
+          to { opacity: 0; transform: translateY(-8px); }
         }
         
         @media (max-width: 900px) {
