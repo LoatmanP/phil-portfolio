@@ -261,8 +261,8 @@ const ChoiceAnomalies = ({ onBack }) => {
   const cardStyle = {
     padding: '20px',
     borderRadius: '12px',
-    backgroundColor: 'rgba(212, 165, 116, 0.03)',
-    border: '1px solid rgba(212, 165, 116, 0.08)',
+    backgroundColor: 'rgba(138, 180, 255, 0.03)',
+    border: '1px solid rgba(138, 180, 255, 0.08)',
   };
 
   const radioStyle = (selected) => ({
@@ -272,9 +272,9 @@ const ChoiceAnomalies = ({ onBack }) => {
     cursor: 'pointer',
     fontSize: '14px',
     fontWeight: selected ? '600' : '400',
-    color: selected ? '#e8e6e3' : '#9ca3af',
-    backgroundColor: selected ? 'rgba(212, 165, 116, 0.15)' : 'rgba(212, 165, 116, 0.03)',
-    border: selected ? '1px solid rgba(212, 165, 116, 0.4)' : '1px solid rgba(212, 165, 116, 0.08)',
+    color: selected ? '#ededef' : '#a1a1aa',
+    backgroundColor: selected ? 'rgba(138, 180, 255, 0.15)' : 'rgba(138, 180, 255, 0.03)',
+    border: selected ? '1px solid rgba(138, 180, 255, 0.4)' : '1px solid rgba(138, 180, 255, 0.08)',
     transition: 'all 0.2s ease',
     marginBottom: '6px',
   });
@@ -283,8 +283,8 @@ const ChoiceAnomalies = ({ onBack }) => {
     padding: '14px 40px',
     fontSize: '16px',
     fontWeight: '600',
-    color: enabled ? '#1a2f2d' : '#6b7280',
-    backgroundColor: enabled ? '#d4a574' : 'rgba(212, 165, 116, 0.1)',
+    color: enabled ? '#0a0a0b' : '#6b6b74',
+    backgroundColor: enabled ? '#8ab4ff' : 'rgba(138, 180, 255, 0.1)',
     border: 'none',
     borderRadius: '10px',
     cursor: enabled ? 'pointer' : 'not-allowed',
@@ -299,14 +299,14 @@ const ChoiceAnomalies = ({ onBack }) => {
       <div style={{
         padding: '12px 20px',
         borderRadius: '8px',
-        backgroundColor: 'rgba(212, 165, 116, 0.06)',
-        border: '1px solid rgba(212, 165, 116, 0.15)',
+        backgroundColor: 'rgba(138, 180, 255, 0.06)',
+        border: '1px solid rgba(138, 180, 255, 0.15)',
         marginBottom: '24px',
       }}>
-        <span style={{ fontSize: '13px', fontWeight: '600', letterSpacing: '1px', textTransform: 'uppercase', color: '#d4a574' }}>
+        <span style={{ fontSize: '13px', fontWeight: '600', letterSpacing: '1px', textTransform: 'uppercase', color: '#8ab4ff' }}>
           Condition: {condLabel}
         </span>
-        <p style={{ fontSize: '14px', color: '#9ca3af', margin: '8px 0 0 0' }}>
+        <p style={{ fontSize: '14px', color: '#a1a1aa', margin: '8px 0 0 0' }}>
           Which reward do you prefer? Select one option for each choice.
         </p>
       </div>
@@ -318,7 +318,7 @@ const ChoiceAnomalies = ({ onBack }) => {
       }}>
         {trials.map((trial, idx) => (
           <div key={idx} style={cardStyle}>
-            <div style={{ fontSize: '11px', color: '#6b7280', marginBottom: '10px', fontWeight: '600', letterSpacing: '1px' }}>
+            <div style={{ fontSize: '11px', color: '#6b6b74', marginBottom: '10px', fontWeight: '600', letterSpacing: '1px' }}>
               CHOICE {idx + 1}
             </div>
             <label style={radioStyle(selections[idx] === 0)}>
@@ -344,27 +344,27 @@ const ChoiceAnomalies = ({ onBack }) => {
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
         <button onClick={onBack} style={{
-          background: 'none', border: '1px solid rgba(212, 165, 116, 0.2)',
-          borderRadius: '8px', color: '#d4a574', padding: '8px 16px',
+          background: 'none', border: '1px solid rgba(138, 180, 255, 0.2)',
+          borderRadius: '8px', color: '#8ab4ff', padding: '8px 16px',
           cursor: 'pointer', fontSize: '14px', fontFamily: 'inherit',
         }}>
           &larr; Back to Projects
         </button>
       </div>
 
-      <h2 style={{ fontSize: '28px', fontWeight: '700', color: '#e8e6e3', margin: '0 0 8px 0' }}>
+      <h2 style={{ fontSize: '28px', fontWeight: '700', color: '#ededef', margin: '0 0 8px 0' }}>
         Intertemporal Choice Anomalies
       </h2>
-      <p style={{ fontSize: '15px', color: '#9ca3af', lineHeight: 1.7, marginBottom: '8px' }}>
-        Based on <em style={{ color: '#d4a574' }}>Loatman & Luhmann</em> — experience two classic decision-making anomalies firsthand and see how well computational models predict your behavior.
+      <p style={{ fontSize: '15px', color: '#a1a1aa', lineHeight: 1.7, marginBottom: '8px' }}>
+        Based on <em style={{ color: '#8ab4ff' }}>Loatman & Luhmann</em> — experience two classic decision-making anomalies firsthand and see how well computational models predict your behavior.
       </p>
-      <p style={{ fontSize: '14px', color: '#6b7280', lineHeight: 1.7, marginBottom: '32px' }}>
+      <p style={{ fontSize: '14px', color: '#6b6b74', lineHeight: 1.7, marginBottom: '32px' }}>
         The key finding: although these anomalies are statistically significant, they don't translate into general problems with prediction. Models can still accurately predict your choices even when your behavior is "irrational."
       </p>
 
       {/* Experiment selector */}
       <div style={{ marginBottom: '32px' }}>
-        <label style={{ fontSize: '13px', fontWeight: '600', letterSpacing: '1px', textTransform: 'uppercase', color: '#6b7280', display: 'block', marginBottom: '10px' }}>
+        <label style={{ fontSize: '13px', fontWeight: '600', letterSpacing: '1px', textTransform: 'uppercase', color: '#6b6b74', display: 'block', marginBottom: '10px' }}>
           Select Experiment
         </label>
         <div style={{ display: 'flex', gap: '8px' }}>
@@ -374,9 +374,9 @@ const ChoiceAnomalies = ({ onBack }) => {
           ].map(e => (
             <button key={e.id} onClick={() => resetExperiment(e.id)} style={{
               padding: '10px 24px', fontSize: '14px', fontWeight: '500',
-              color: experiment === e.id ? '#e8e6e3' : '#6b7280',
-              backgroundColor: experiment === e.id ? 'rgba(212, 165, 116, 0.15)' : 'transparent',
-              border: experiment === e.id ? '1px solid rgba(212, 165, 116, 0.3)' : '1px solid rgba(212, 165, 116, 0.1)',
+              color: experiment === e.id ? '#ededef' : '#6b6b74',
+              backgroundColor: experiment === e.id ? 'rgba(138, 180, 255, 0.15)' : 'transparent',
+              border: experiment === e.id ? '1px solid rgba(138, 180, 255, 0.3)' : '1px solid rgba(138, 180, 255, 0.1)',
               borderRadius: '8px', cursor: 'pointer', fontFamily: 'inherit', transition: 'all 0.2s ease',
             }}>
               {e.label}
@@ -390,28 +390,28 @@ const ChoiceAnomalies = ({ onBack }) => {
         <div style={{ ...cardStyle, padding: '32px', marginBottom: '32px' }}>
           {experiment === 'stationarity' ? (
             <>
-              <h3 style={{ fontSize: '20px', color: '#e8e6e3', marginTop: 0 }}>What are Stationarity Violations?</h3>
-              <p style={{ color: '#9ca3af', lineHeight: 1.8, fontSize: '15px' }}>
+              <h3 style={{ fontSize: '20px', color: '#ededef', marginTop: 0 }}>What are Stationarity Violations?</h3>
+              <p style={{ color: '#a1a1aa', lineHeight: 1.8, fontSize: '15px' }}>
                 Rational decision-makers should have <em>stationary</em> preferences: if you prefer $100 in 12 months over $75 in 10 months, you should also prefer $100 in 2 months over $75 today. But research shows people often switch — becoming less patient as rewards get closer.
               </p>
-              <p style={{ color: '#9ca3af', lineHeight: 1.8, fontSize: '15px' }}>
-                You'll answer the same 12 choices twice: once with <strong style={{ color: '#d4a574' }}>short delays</strong> and once with all delays pushed <strong style={{ color: '#d4a574' }}>60 days into the future</strong>. If your preferences change between conditions, you're exhibiting a stationarity violation.
+              <p style={{ color: '#a1a1aa', lineHeight: 1.8, fontSize: '15px' }}>
+                You'll answer the same 12 choices twice: once with <strong style={{ color: '#8ab4ff' }}>short delays</strong> and once with all delays pushed <strong style={{ color: '#8ab4ff' }}>60 days into the future</strong>. If your preferences change between conditions, you're exhibiting a stationarity violation.
               </p>
-              <p style={{ color: '#9ca3af', lineHeight: 1.8, fontSize: '15px', marginBottom: '4px' }}>
-                <strong style={{ color: '#e8e6e3' }}>Real-world example:</strong> Setting your alarm for 6 AM with every intention of waking up, but hitting snooze once the moment arrives. Your "future self" was patient; your "present self" is not.
+              <p style={{ color: '#a1a1aa', lineHeight: 1.8, fontSize: '15px', marginBottom: '4px' }}>
+                <strong style={{ color: '#ededef' }}>Real-world example:</strong> Setting your alarm for 6 AM with every intention of waking up, but hitting snooze once the moment arrives. Your "future self" was patient; your "present self" is not.
               </p>
             </>
           ) : (
             <>
-              <h3 style={{ fontSize: '20px', color: '#e8e6e3', marginTop: 0 }}>What is the Magnitude Effect?</h3>
-              <p style={{ color: '#9ca3af', lineHeight: 1.8, fontSize: '15px' }}>
+              <h3 style={{ fontSize: '20px', color: '#ededef', marginTop: 0 }}>What is the Magnitude Effect?</h3>
+              <p style={{ color: '#a1a1aa', lineHeight: 1.8, fontSize: '15px' }}>
                 Rational decision-makers should discount at the same rate regardless of reward size. But research shows people become more patient with larger amounts — discounting $15 vs $80 more steeply than $105 vs $560.
               </p>
-              <p style={{ color: '#9ca3af', lineHeight: 1.8, fontSize: '15px' }}>
-                You'll answer the same 12 choices twice: once with <strong style={{ color: '#d4a574' }}>small rewards</strong> and once with all rewards <strong style={{ color: '#d4a574' }}>multiplied by 7</strong>. If you become more patient with larger rewards, you're exhibiting the magnitude effect.
+              <p style={{ color: '#a1a1aa', lineHeight: 1.8, fontSize: '15px' }}>
+                You'll answer the same 12 choices twice: once with <strong style={{ color: '#8ab4ff' }}>small rewards</strong> and once with all rewards <strong style={{ color: '#8ab4ff' }}>multiplied by 7</strong>. If you become more patient with larger rewards, you're exhibiting the magnitude effect.
               </p>
-              <p style={{ color: '#9ca3af', lineHeight: 1.8, fontSize: '15px', marginBottom: '4px' }}>
-                <strong style={{ color: '#e8e6e3' }}>Real-world example:</strong> A waiter splitting dinner into smaller checks to get a bigger total tip — people discount more steeply with smaller amounts.
+              <p style={{ color: '#a1a1aa', lineHeight: 1.8, fontSize: '15px', marginBottom: '4px' }}>
+                <strong style={{ color: '#ededef' }}>Real-world example:</strong> A waiter splitting dinner into smaller checks to get a bigger total tip — people discount more steeply with smaller amounts.
               </p>
             </>
           )}
@@ -456,25 +456,25 @@ const ChoiceAnomalies = ({ onBack }) => {
         <div>
           {/* Behavioral results */}
           <div style={{ ...cardStyle, padding: '28px', marginBottom: '24px' }}>
-            <h3 style={{ fontSize: '20px', color: '#e8e6e3', marginTop: 0, marginBottom: '16px' }}>Your Behavioral Results</h3>
+            <h3 style={{ fontSize: '20px', color: '#ededef', marginTop: 0, marginBottom: '16px' }}>Your Behavioral Results</h3>
             <ResponsiveContainer width="100%" height={280}>
               <BarChart data={[
                 { condition: cond1Label, 'P(LL)': parseFloat((results.pLL1 * 100).toFixed(1)) },
                 { condition: cond2Label, 'P(LL)': parseFloat((results.pLL2 * 100).toFixed(1)) },
               ]} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="rgba(212, 165, 116, 0.08)" />
-                <XAxis dataKey="condition" tick={{ fill: '#9ca3af', fontSize: 13 }} stroke="rgba(212, 165, 116, 0.2)" />
-                <YAxis domain={[0, 100]} tick={{ fill: '#9ca3af', fontSize: 12 }} stroke="rgba(212, 165, 116, 0.2)"
-                  label={{ value: '% chose delayed reward', angle: -90, position: 'insideLeft', fill: '#9ca3af', fontSize: 13 }} />
-                <Tooltip contentStyle={{ backgroundColor: '#1a2f2d', border: '1px solid rgba(212, 165, 116, 0.2)', borderRadius: '8px', color: '#e8e6e3' }}
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(138, 180, 255, 0.08)" />
+                <XAxis dataKey="condition" tick={{ fill: '#a1a1aa', fontSize: 13 }} stroke="rgba(138, 180, 255, 0.2)" />
+                <YAxis domain={[0, 100]} tick={{ fill: '#a1a1aa', fontSize: 12 }} stroke="rgba(138, 180, 255, 0.2)"
+                  label={{ value: '% chose delayed reward', angle: -90, position: 'insideLeft', fill: '#a1a1aa', fontSize: 13 }} />
+                <Tooltip contentStyle={{ backgroundColor: '#0a0a0b', border: '1px solid rgba(138, 180, 255, 0.2)', borderRadius: '8px', color: '#ededef' }}
                   formatter={(v) => [`${v}%`, 'Chose delayed reward']} />
                 <Bar dataKey="P(LL)" radius={[6, 6, 0, 0]}>
-                  <Cell fill="#d4a574" />
+                  <Cell fill="#8ab4ff" />
                   <Cell fill="#0BC743" />
                 </Bar>
               </BarChart>
             </ResponsiveContainer>
-            <div style={{ marginTop: '16px', padding: '16px', borderRadius: '8px', backgroundColor: results.pLL2 > results.pLL1 ? 'rgba(11, 199, 67, 0.08)' : 'rgba(212, 165, 116, 0.06)', border: results.pLL2 > results.pLL1 ? '1px solid rgba(11, 199, 67, 0.2)' : '1px solid rgba(212, 165, 116, 0.15)' }}>
+            <div style={{ marginTop: '16px', padding: '16px', borderRadius: '8px', backgroundColor: results.pLL2 > results.pLL1 ? 'rgba(11, 199, 67, 0.08)' : 'rgba(138, 180, 255, 0.06)', border: results.pLL2 > results.pLL1 ? '1px solid rgba(11, 199, 67, 0.2)' : '1px solid rgba(138, 180, 255, 0.15)' }}>
               {results.pLL2 > results.pLL1 ? (
                 <p style={{ color: '#0BC743', margin: 0, fontSize: '15px', fontWeight: '500' }}>
                   {experiment === 'stationarity'
@@ -482,11 +482,11 @@ const ChoiceAnomalies = ({ onBack }) => {
                     : `You chose the delayed reward ${((results.pLL2 - results.pLL1) * 100).toFixed(0)}% more often with larger rewards — a magnitude effect! You became more patient with bigger stakes.`}
                 </p>
               ) : results.pLL2 < results.pLL1 ? (
-                <p style={{ color: '#d4a574', margin: 0, fontSize: '15px', fontWeight: '500' }}>
+                <p style={{ color: '#8ab4ff', margin: 0, fontSize: '15px', fontWeight: '500' }}>
                   Interesting — your preferences shifted in the opposite direction of the typical anomaly. You were actually more impatient in the second condition.
                 </p>
               ) : (
-                <p style={{ color: '#d4a574', margin: 0, fontSize: '15px', fontWeight: '500' }}>
+                <p style={{ color: '#8ab4ff', margin: 0, fontSize: '15px', fontWeight: '500' }}>
                   Your preferences were perfectly consistent across conditions — no anomaly detected! You have textbook rational preferences.
                 </p>
               )}
@@ -495,27 +495,27 @@ const ChoiceAnomalies = ({ onBack }) => {
 
           {/* Model predictions */}
           <div style={{ ...cardStyle, padding: '28px', marginBottom: '24px' }}>
-            <h3 style={{ fontSize: '20px', color: '#e8e6e3', marginTop: 0, marginBottom: '8px' }}>Model Predictive Accuracy</h3>
-            <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '20px' }}>
+            <h3 style={{ fontSize: '20px', color: '#ededef', marginTop: 0, marginBottom: '8px' }}>Model Predictive Accuracy</h3>
+            <p style={{ fontSize: '14px', color: '#6b6b74', marginBottom: '20px' }}>
               How well do models predict your choices within each condition and across conditions?
             </p>
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
                 <thead>
-                  <tr style={{ borderBottom: '1px solid rgba(212, 165, 116, 0.15)' }}>
-                    <th style={{ textAlign: 'left', padding: '10px 12px', color: '#d4a574', fontWeight: '600' }}>Model</th>
-                    <th style={{ textAlign: 'center', padding: '10px 12px', color: '#9ca3af', fontWeight: '500' }}>Within {cond1Label}</th>
-                    <th style={{ textAlign: 'center', padding: '10px 12px', color: '#9ca3af', fontWeight: '500' }}>Within {cond2Label}</th>
-                    <th style={{ textAlign: 'center', padding: '10px 12px', color: '#9ca3af', fontWeight: '500' }}>Train {cond1Label} → Test {cond2Label}</th>
-                    <th style={{ textAlign: 'center', padding: '10px 12px', color: '#9ca3af', fontWeight: '500' }}>Train {cond2Label} → Test {cond1Label}</th>
+                  <tr style={{ borderBottom: '1px solid rgba(138, 180, 255, 0.15)' }}>
+                    <th style={{ textAlign: 'left', padding: '10px 12px', color: '#8ab4ff', fontWeight: '600' }}>Model</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', color: '#a1a1aa', fontWeight: '500' }}>Within {cond1Label}</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', color: '#a1a1aa', fontWeight: '500' }}>Within {cond2Label}</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', color: '#a1a1aa', fontWeight: '500' }}>Train {cond1Label} → Test {cond2Label}</th>
+                    <th style={{ textAlign: 'center', padding: '10px 12px', color: '#a1a1aa', fontWeight: '500' }}>Train {cond2Label} → Test {cond1Label}</th>
                   </tr>
                 </thead>
                 <tbody>
                   {results.modelResults.map((m, i) => (
-                    <tr key={i} style={{ borderBottom: '1px solid rgba(212, 165, 116, 0.06)' }}>
-                      <td style={{ padding: '10px 12px', color: '#e8e6e3', fontWeight: '500' }}>{m.name}</td>
-                      <td style={{ textAlign: 'center', padding: '10px 12px', color: '#9ca3af' }}>{m.within1.toFixed(1)}%</td>
-                      <td style={{ textAlign: 'center', padding: '10px 12px', color: '#9ca3af' }}>{m.within2.toFixed(1)}%</td>
+                    <tr key={i} style={{ borderBottom: '1px solid rgba(138, 180, 255, 0.06)' }}>
+                      <td style={{ padding: '10px 12px', color: '#ededef', fontWeight: '500' }}>{m.name}</td>
+                      <td style={{ textAlign: 'center', padding: '10px 12px', color: '#a1a1aa' }}>{m.within1.toFixed(1)}%</td>
+                      <td style={{ textAlign: 'center', padding: '10px 12px', color: '#a1a1aa' }}>{m.within2.toFixed(1)}%</td>
                       <td style={{ textAlign: 'center', padding: '10px 12px', color: m.across12 >= 60 ? '#0BC743' : '#ef4444' }}>{m.across12.toFixed(1)}%</td>
                       <td style={{ textAlign: 'center', padding: '10px 12px', color: m.across21 >= 60 ? '#0BC743' : '#ef4444' }}>{m.across21.toFixed(1)}%</td>
                     </tr>
@@ -527,35 +527,35 @@ const ChoiceAnomalies = ({ onBack }) => {
 
           {/* Key insight */}
           <div style={{ ...cardStyle, padding: '28px', marginBottom: '24px' }}>
-            <h3 style={{ fontSize: '20px', color: '#d4a574', marginTop: 0 }}>The Key Insight</h3>
-            <p style={{ color: '#9ca3af', lineHeight: 1.8, fontSize: '15px' }}>
-              Even when your preferences shift across conditions — a behavior labeled "irrational" by traditional significance testing — computational models can still predict your choices reasonably well across conditions. The anomaly is <strong style={{ color: '#e8e6e3' }}>statistically real but predictively inconsequential</strong>.
+            <h3 style={{ fontSize: '20px', color: '#8ab4ff', marginTop: 0 }}>The Key Insight</h3>
+            <p style={{ color: '#a1a1aa', lineHeight: 1.8, fontSize: '15px' }}>
+              Even when your preferences shift across conditions — a behavior labeled "irrational" by traditional significance testing — computational models can still predict your choices reasonably well across conditions. The anomaly is <strong style={{ color: '#ededef' }}>statistically real but predictively inconsequential</strong>.
             </p>
-            <p style={{ color: '#9ca3af', lineHeight: 1.8, fontSize: '15px' }}>
-              This illustrates a critical distinction in science: <strong style={{ color: '#e8e6e3' }}>explanatory power ≠ predictive power</strong>. A statistically significant effect doesn't automatically mean a model needs to accommodate it to make good predictions. Simpler models (like Exponential with just 2 parameters) often predict just as well as complex ones designed to capture these anomalies.
+            <p style={{ color: '#a1a1aa', lineHeight: 1.8, fontSize: '15px' }}>
+              This illustrates a critical distinction in science: <strong style={{ color: '#ededef' }}>explanatory power ≠ predictive power</strong>. A statistically significant effect doesn't automatically mean a model needs to accommodate it to make good predictions. Simpler models (like Exponential with just 2 parameters) often predict just as well as complex ones designed to capture these anomalies.
             </p>
           </div>
 
           {/* Models explained */}
           <div style={{ ...cardStyle, padding: '28px', marginBottom: '24px' }}>
-            <h3 style={{ fontSize: '18px', color: '#d4a574', marginTop: 0 }}>Models Used</h3>
+            <h3 style={{ fontSize: '18px', color: '#8ab4ff', marginTop: 0 }}>Models Used</h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
-                <h4 style={{ color: '#e8e6e3', margin: '0 0 4px 0', fontSize: '15px' }}>Exponential (Samuelson, 1937)</h4>
-                <p style={{ color: '#9ca3af', fontSize: '14px', margin: 0, lineHeight: 1.6 }}>
-                  <span style={{ fontFamily: 'serif', fontStyle: 'italic', color: '#e8e6e3' }}>PV = V&#8320; &middot; e<sup>-kd</sup></span> — Assumes fixed discount rate. 2 parameters. Cannot explain stationarity violations by design, yet predicts them surprisingly well.
+                <h4 style={{ color: '#ededef', margin: '0 0 4px 0', fontSize: '15px' }}>Exponential (Samuelson, 1937)</h4>
+                <p style={{ color: '#a1a1aa', fontSize: '14px', margin: 0, lineHeight: 1.6 }}>
+                  <span style={{ fontFamily: 'serif', fontStyle: 'italic', color: '#ededef' }}>PV = V&#8320; &middot; e<sup>-kd</sup></span> — Assumes fixed discount rate. 2 parameters. Cannot explain stationarity violations by design, yet predicts them surprisingly well.
                 </p>
               </div>
               <div>
-                <h4 style={{ color: '#e8e6e3', margin: '0 0 4px 0', fontSize: '15px' }}>Hyperbolic (Mazur, 1987)</h4>
-                <p style={{ color: '#9ca3af', fontSize: '14px', margin: 0, lineHeight: 1.6 }}>
-                  <span style={{ fontFamily: 'serif', fontStyle: 'italic', color: '#e8e6e3' }}>PV = V&#8320; / (1 + kd)</span> — Assumes diminishing sensitivity to delay. 2 parameters. Designed to capture stationarity violations.
+                <h4 style={{ color: '#ededef', margin: '0 0 4px 0', fontSize: '15px' }}>Hyperbolic (Mazur, 1987)</h4>
+                <p style={{ color: '#a1a1aa', fontSize: '14px', margin: 0, lineHeight: 1.6 }}>
+                  <span style={{ fontFamily: 'serif', fontStyle: 'italic', color: '#ededef' }}>PV = V&#8320; / (1 + kd)</span> — Assumes diminishing sensitivity to delay. 2 parameters. Designed to capture stationarity violations.
                 </p>
               </div>
               <div>
-                <h4 style={{ color: '#e8e6e3', margin: '0 0 4px 0', fontSize: '15px' }}>Difference Model (Loatman & Luhmann, 2017)</h4>
-                <p style={{ color: '#9ca3af', fontSize: '14px', margin: 0, lineHeight: 1.6 }}>
-                  <span style={{ fontFamily: 'serif', fontStyle: 'italic', color: '#e8e6e3' }}>P(LL) = logistic(&#946;&#8320; + &#946;&#8321;&#916;x + &#946;&#8322;&#916;t)</span> — Attribute-based approach using raw reward and delay differences. 3 parameters. The simplest and most parsimonious attribute-based model.
+                <h4 style={{ color: '#ededef', margin: '0 0 4px 0', fontSize: '15px' }}>Difference Model (Loatman & Luhmann, 2017)</h4>
+                <p style={{ color: '#a1a1aa', fontSize: '14px', margin: 0, lineHeight: 1.6 }}>
+                  <span style={{ fontFamily: 'serif', fontStyle: 'italic', color: '#ededef' }}>P(LL) = logistic(&#946;&#8320; + &#946;&#8321;&#916;x + &#946;&#8322;&#916;t)</span> — Attribute-based approach using raw reward and delay differences. 3 parameters. The simplest and most parsimonious attribute-based model.
                 </p>
               </div>
             </div>

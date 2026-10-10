@@ -244,8 +244,8 @@ const TimePreferences = ({ onBack }) => {
   const cardStyle = {
     padding: '20px',
     borderRadius: '12px',
-    backgroundColor: 'rgba(212, 165, 116, 0.03)',
-    border: '1px solid rgba(212, 165, 116, 0.08)',
+    backgroundColor: 'rgba(138, 180, 255, 0.03)',
+    border: '1px solid rgba(138, 180, 255, 0.08)',
   };
 
   const radioLabelStyle = (selected) => ({
@@ -255,9 +255,9 @@ const TimePreferences = ({ onBack }) => {
     cursor: 'pointer',
     fontSize: '14px',
     fontWeight: selected ? '600' : '400',
-    color: selected ? '#e8e6e3' : '#9ca3af',
-    backgroundColor: selected ? 'rgba(212, 165, 116, 0.15)' : 'rgba(212, 165, 116, 0.03)',
-    border: selected ? '1px solid rgba(212, 165, 116, 0.4)' : '1px solid rgba(212, 165, 116, 0.08)',
+    color: selected ? '#ededef' : '#a1a1aa',
+    backgroundColor: selected ? 'rgba(138, 180, 255, 0.15)' : 'rgba(138, 180, 255, 0.03)',
+    border: selected ? '1px solid rgba(138, 180, 255, 0.4)' : '1px solid rgba(138, 180, 255, 0.08)',
     transition: 'all 0.2s ease',
     marginBottom: '6px',
   });
@@ -270,9 +270,9 @@ const TimePreferences = ({ onBack }) => {
           onClick={onBack}
           style={{
             background: 'none',
-            border: '1px solid rgba(212, 165, 116, 0.2)',
+            border: '1px solid rgba(138, 180, 255, 0.2)',
             borderRadius: '8px',
-            color: '#d4a574',
+            color: '#8ab4ff',
             padding: '8px 16px',
             cursor: 'pointer',
             fontSize: '14px',
@@ -283,16 +283,16 @@ const TimePreferences = ({ onBack }) => {
         </button>
       </div>
 
-      <h2 style={{ fontSize: '28px', fontWeight: '700', color: '#e8e6e3', margin: '0 0 8px 0' }}>
+      <h2 style={{ fontSize: '28px', fontWeight: '700', color: '#ededef', margin: '0 0 8px 0' }}>
         Time Preferences: Discount Rate Estimator
       </h2>
-      <p style={{ fontSize: '15px', color: '#9ca3af', lineHeight: 1.7, marginBottom: '32px' }}>
+      <p style={{ fontSize: '15px', color: '#a1a1aa', lineHeight: 1.7, marginBottom: '32px' }}>
         Select intertemporal choices below and each model will estimate your discounting rate and predict your choices.
       </p>
 
       {/* Model selector */}
       <div style={{ marginBottom: '32px' }}>
-        <label style={{ fontSize: '13px', fontWeight: '600', letterSpacing: '1px', textTransform: 'uppercase', color: '#6b7280', display: 'block', marginBottom: '10px' }}>
+        <label style={{ fontSize: '13px', fontWeight: '600', letterSpacing: '1px', textTransform: 'uppercase', color: '#6b6b74', display: 'block', marginBottom: '10px' }}>
           Select Intertemporal Choice Model
         </label>
         <div style={{ display: 'flex', gap: '8px' }}>
@@ -304,9 +304,9 @@ const TimePreferences = ({ onBack }) => {
                 padding: '10px 24px',
                 fontSize: '14px',
                 fontWeight: '500',
-                color: modelType === m ? '#e8e6e3' : '#6b7280',
-                backgroundColor: modelType === m ? 'rgba(212, 165, 116, 0.15)' : 'transparent',
-                border: modelType === m ? '1px solid rgba(212, 165, 116, 0.3)' : '1px solid rgba(212, 165, 116, 0.1)',
+                color: modelType === m ? '#ededef' : '#6b6b74',
+                backgroundColor: modelType === m ? 'rgba(138, 180, 255, 0.15)' : 'transparent',
+                border: modelType === m ? '1px solid rgba(138, 180, 255, 0.3)' : '1px solid rgba(138, 180, 255, 0.1)',
                 borderRadius: '8px',
                 cursor: 'pointer',
                 fontFamily: 'inherit',
@@ -342,7 +342,7 @@ const TimePreferences = ({ onBack }) => {
       }}>
         {TRIALS.map((trial, idx) => (
           <div key={trial.id} style={cardStyle}>
-            <div style={{ fontSize: '11px', color: '#6b7280', marginBottom: '10px', fontWeight: '600', letterSpacing: '1px' }}>
+            <div style={{ fontSize: '11px', color: '#6b6b74', marginBottom: '10px', fontWeight: '600', letterSpacing: '1px' }}>
               CHOICE {trial.id}
             </div>
             <label style={radioLabelStyle(selections[idx] === 0)}>
@@ -377,8 +377,8 @@ const TimePreferences = ({ onBack }) => {
           padding: '14px 40px',
           fontSize: '16px',
           fontWeight: '600',
-          color: allAnswered ? '#1a2f2d' : '#6b7280',
-          backgroundColor: allAnswered ? '#d4a574' : 'rgba(212, 165, 116, 0.1)',
+          color: allAnswered ? '#0a0a0b' : '#6b6b74',
+          backgroundColor: allAnswered ? '#8ab4ff' : 'rgba(138, 180, 255, 0.1)',
           border: 'none',
           borderRadius: '10px',
           cursor: allAnswered ? 'pointer' : 'not-allowed',
@@ -395,34 +395,34 @@ const TimePreferences = ({ onBack }) => {
       {results && (
         <div>
           {/* Discount rate */}
-          <h3 style={{ fontSize: '24px', fontWeight: '700', color: '#e8e6e3', marginBottom: '8px' }}>
+          <h3 style={{ fontSize: '24px', fontWeight: '700', color: '#ededef', marginBottom: '8px' }}>
             {modelType} Discount Rate: {results.discountRate.toFixed(4)}
           </h3>
-          <p style={{ fontSize: '16px', color: '#9ca3af', lineHeight: 1.7, marginBottom: '40px' }}>
-            According to your intertemporal preferences, cash loses <span style={{ color: '#d4a574', fontWeight: '600' }}>{(results.discountRate * 100).toFixed(4)}%</span> of its value every additional day into the future.
+          <p style={{ fontSize: '16px', color: '#a1a1aa', lineHeight: 1.7, marginBottom: '40px' }}>
+            According to your intertemporal preferences, cash loses <span style={{ color: '#8ab4ff', fontWeight: '600' }}>{(results.discountRate * 100).toFixed(4)}%</span> of its value every additional day into the future.
           </p>
 
           {/* PV chart */}
           <div style={{ ...cardStyle, marginBottom: '32px', padding: '28px' }}>
-            <h4 style={{ fontSize: '18px', color: '#e8e6e3', marginTop: 0, marginBottom: '20px' }}>
+            <h4 style={{ fontSize: '18px', color: '#ededef', marginTop: 0, marginBottom: '20px' }}>
               {modelType} Discounted Value of $100
             </h4>
             <ResponsiveContainer width="100%" height={350}>
               <LineChart data={results.pvData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="rgba(212, 165, 116, 0.08)" />
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(138, 180, 255, 0.08)" />
                 <XAxis
                   dataKey="days"
-                  label={{ value: 'Days', position: 'insideBottomRight', offset: -5, fill: '#9ca3af' }}
-                  tick={{ fill: '#9ca3af', fontSize: 12 }}
-                  stroke="rgba(212, 165, 116, 0.2)"
+                  label={{ value: 'Days', position: 'insideBottomRight', offset: -5, fill: '#a1a1aa' }}
+                  tick={{ fill: '#a1a1aa', fontSize: 12 }}
+                  stroke="rgba(138, 180, 255, 0.2)"
                 />
                 <YAxis
-                  label={{ value: 'Present Value ($)', angle: -90, position: 'insideLeft', fill: '#9ca3af' }}
-                  tick={{ fill: '#9ca3af', fontSize: 12 }}
-                  stroke="rgba(212, 165, 116, 0.2)"
+                  label={{ value: 'Present Value ($)', angle: -90, position: 'insideLeft', fill: '#a1a1aa' }}
+                  tick={{ fill: '#a1a1aa', fontSize: 12 }}
+                  stroke="rgba(138, 180, 255, 0.2)"
                 />
                 <Tooltip
-                  contentStyle={{ backgroundColor: '#1a2f2d', border: '1px solid rgba(212, 165, 116, 0.2)', borderRadius: '8px', color: '#e8e6e3' }}
+                  contentStyle={{ backgroundColor: '#0a0a0b', border: '1px solid rgba(138, 180, 255, 0.2)', borderRadius: '8px', color: '#ededef' }}
                   formatter={(value) => [`$${value}`, 'Present Value']}
                   labelFormatter={(label) => `Day ${label}`}
                 />
@@ -435,25 +435,25 @@ const TimePreferences = ({ onBack }) => {
           <div style={{ ...cardStyle, marginBottom: '32px', padding: '28px' }}>
             {modelType === 'Exponential' ? (
               <>
-                <h4 style={{ fontSize: '18px', color: '#d4a574', marginTop: 0 }}>Exponential Discounting Model</h4>
-                <p style={{ color: '#9ca3af', lineHeight: 1.7, fontSize: '15px', marginBottom: '12px' }}>
-                  <span style={{ fontFamily: 'serif', fontStyle: 'italic', color: '#e8e6e3', fontSize: '17px' }}>
+                <h4 style={{ fontSize: '18px', color: '#8ab4ff', marginTop: 0 }}>Exponential Discounting Model</h4>
+                <p style={{ color: '#a1a1aa', lineHeight: 1.7, fontSize: '15px', marginBottom: '12px' }}>
+                  <span style={{ fontFamily: 'serif', fontStyle: 'italic', color: '#ededef', fontSize: '17px' }}>
                     PV = V&#8320; &middot; e<sup>-kd</sup>
                   </span>
                 </p>
-                <p style={{ color: '#9ca3af', lineHeight: 1.7, fontSize: '15px', margin: 0 }}>
+                <p style={{ color: '#a1a1aa', lineHeight: 1.7, fontSize: '15px', margin: 0 }}>
                   First introduced by Paul Samuelson in the 1930s, the exponential discounting model represents a decision-maker who has dynamically consistent intertemporal preferences, indicating that preferences do not change as they move through time, which prevents the decision-maker from being arbitraged.
                 </p>
               </>
             ) : (
               <>
-                <h4 style={{ fontSize: '18px', color: '#d4a574', marginTop: 0 }}>Hyperbolic Discounting Model</h4>
-                <p style={{ color: '#9ca3af', lineHeight: 1.7, fontSize: '15px', marginBottom: '12px' }}>
-                  <span style={{ fontFamily: 'serif', fontStyle: 'italic', color: '#e8e6e3', fontSize: '17px' }}>
+                <h4 style={{ fontSize: '18px', color: '#8ab4ff', marginTop: 0 }}>Hyperbolic Discounting Model</h4>
+                <p style={{ color: '#a1a1aa', lineHeight: 1.7, fontSize: '15px', marginBottom: '12px' }}>
+                  <span style={{ fontFamily: 'serif', fontStyle: 'italic', color: '#ededef', fontSize: '17px' }}>
                     PV = V&#8320; &middot; 1 / (1 + kd)
                   </span>
                 </p>
-                <p style={{ color: '#9ca3af', lineHeight: 1.7, fontSize: '15px', margin: 0 }}>
+                <p style={{ color: '#a1a1aa', lineHeight: 1.7, fontSize: '15px', margin: 0 }}>
                   Unlike the exponential discounting model, the Hyperbolic Discounting Model represents a decision-maker whose preferences can be dynamically inconsistent, in which rewards become disproportionately more valuable as they become closer to present time.
                 </p>
               </>
@@ -462,28 +462,28 @@ const TimePreferences = ({ onBack }) => {
 
           {/* Indifference */}
           <div style={{ ...cardStyle, marginBottom: '32px', padding: '28px' }}>
-            <p style={{ fontSize: '16px', color: '#e8e6e3', lineHeight: 1.7, margin: '0 0 20px 0' }}>
-              With your {modelType} discount rate of <span style={{ color: '#d4a574', fontWeight: '600' }}>{results.discountRate.toFixed(4)}</span>, you would be indifferent to receiving $100 today and $200 in <span style={{ color: '#d4a574', fontWeight: '600' }}>{results.indifferentDays} days</span>.
+            <p style={{ fontSize: '16px', color: '#ededef', lineHeight: 1.7, margin: '0 0 20px 0' }}>
+              With your {modelType} discount rate of <span style={{ color: '#8ab4ff', fontWeight: '600' }}>{results.discountRate.toFixed(4)}</span>, you would be indifferent to receiving $100 today and $200 in <span style={{ color: '#8ab4ff', fontWeight: '600' }}>{results.indifferentDays} days</span>.
             </p>
-            <h4 style={{ fontSize: '16px', color: '#e8e6e3', marginTop: 0, marginBottom: '20px' }}>
+            <h4 style={{ fontSize: '16px', color: '#ededef', marginTop: 0, marginBottom: '20px' }}>
               The Present Value of $200 Offered in {results.indifferentDays} Days is $100
             </h4>
             <ResponsiveContainer width="100%" height={350}>
               <LineChart data={results.indiffData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="rgba(212, 165, 116, 0.08)" />
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(138, 180, 255, 0.08)" />
                 <XAxis
                   dataKey="futureDays"
-                  label={{ value: 'Future Days', position: 'insideBottomRight', offset: -5, fill: '#9ca3af' }}
-                  tick={{ fill: '#9ca3af', fontSize: 12 }}
-                  stroke="rgba(212, 165, 116, 0.2)"
+                  label={{ value: 'Future Days', position: 'insideBottomRight', offset: -5, fill: '#a1a1aa' }}
+                  tick={{ fill: '#a1a1aa', fontSize: 12 }}
+                  stroke="rgba(138, 180, 255, 0.2)"
                 />
                 <YAxis
-                  label={{ value: 'Present Value ($)', angle: -90, position: 'insideLeft', fill: '#9ca3af' }}
-                  tick={{ fill: '#9ca3af', fontSize: 12 }}
-                  stroke="rgba(212, 165, 116, 0.2)"
+                  label={{ value: 'Present Value ($)', angle: -90, position: 'insideLeft', fill: '#a1a1aa' }}
+                  tick={{ fill: '#a1a1aa', fontSize: 12 }}
+                  stroke="rgba(138, 180, 255, 0.2)"
                 />
                 <Tooltip
-                  contentStyle={{ backgroundColor: '#1a2f2d', border: '1px solid rgba(212, 165, 116, 0.2)', borderRadius: '8px', color: '#e8e6e3' }}
+                  contentStyle={{ backgroundColor: '#0a0a0b', border: '1px solid rgba(138, 180, 255, 0.2)', borderRadius: '8px', color: '#ededef' }}
                   formatter={(value) => [`$${value}`, 'Present Value']}
                   labelFormatter={(label) => `${label} days away`}
                 />
@@ -501,16 +501,16 @@ const TimePreferences = ({ onBack }) => {
             marginBottom: '32px',
             textAlign: 'center',
           }}>
-            <h3 style={{ fontSize: '24px', fontWeight: '700', color: '#e8e6e3', margin: '0 0 8px 0' }}>
+            <h3 style={{ fontSize: '24px', fontWeight: '700', color: '#ededef', margin: '0 0 8px 0' }}>
               Percentage of choices predicted correctly: {(results.avgAccuracy * 100).toFixed(2)}%
             </h3>
-            <p style={{ fontSize: '16px', color: '#9ca3af', margin: 0 }}>
+            <p style={{ fontSize: '16px', color: '#a1a1aa', margin: 0 }}>
               {accuracyDescription(results.avgAccuracy)}
             </p>
           </div>
 
           {modelType === 'Exponential' && (
-            <p style={{ fontSize: '15px', color: '#9ca3af', lineHeight: 1.7 }}>
+            <p style={{ fontSize: '15px', color: '#a1a1aa', lineHeight: 1.7 }}>
               Exponential decision makers have <em>dynamically consistent</em> preferences, meaning preferences for choices will not change as those choice items move through time.
             </p>
           )}
