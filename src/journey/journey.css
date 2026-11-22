@@ -1,0 +1,112 @@
+/* Break out of <main>'s padding, and slide up under the translucent header, so the stage fills the screen. */
+.journey {
+  position: relative;
+  margin: calc(-1 * clamp(48px, 8vw, 104px) - var(--header-h, 0px)) calc(-1 * clamp(16px, 4vw, 48px)) clamp(48px, 8vw, 104px);
+}
+
+.journey-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.journey-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+/* Captions: a left column on wide screens, bottom of the screen on phones. */
+.journey-text {
+  position: absolute;
+  left: clamp(16px, 6vw, 96px);
+  top: 50%;
+  width: min(460px, 36vw);
+  translate: 0 -50%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+.journey-text h1,
+.journey-text h2 {
+  margin: 0 0 10px;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+}
+.journey-text h1 { font-size: clamp(44px, 6vw, 76px); }
+.journey-text h2 { font-size: clamp(32px, 4vw, 52px); }
+.journey-chapter {
+  margin: 0 0 14px;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.journey-caption { white-space: pre-line; margin: 0; font-size: clamp(16px, 1.5vw, 19px); line-height: 1.5; color: var(--muted); }
+.journey-hint { margin: 28px 0 0; font-size: 13px; color: var(--dim); }
+.journey-hint span { display: inline-block; animation: journeyBob 1.8s ease-in-out infinite; }
+@keyframes journeyBob { 50% { transform: translateY(4px); } }
+
+.journey-intro { opacity: 1; visibility: visible; }
+
+/* The ending, generated word by word. */
+.journey-final { width: min(520px, 40vw); }
+.journey-gen p { margin: 0; }
+.journey-gen .w { opacity: 0; transition: opacity .12s; }
+.journey-gen .w.last::after {
+  content: '';
+  display: inline-block;
+  width: 0.5em;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: -0.12em;
+  background: var(--accent);
+  animation: journeyCaret 1s steps(1) infinite;
+}
+@keyframes journeyCaret { 50% { opacity: 0; } }
+.gen-name { font-size: clamp(40px, 5vw, 64px); font-weight: 600; letter-spacing: -0.035em; line-height: 1.05; }
+.gen-role { margin-top: 8px !important; font-size: clamp(20px, 2vw, 26px); font-weight: 500; color: var(--text); letter-spacing: -0.015em; }
+.gen-body { margin-top: 16px !important; font-size: clamp(15px, 1.4vw, 18px); line-height: 1.55; color: var(--muted); }
+
+
+.journey-skip {
+  position: absolute;
+  right: clamp(16px, 4vw, 48px);
+  bottom: 28px;
+  padding: 8px 14px;
+  font: 500 13px var(--font);
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: color .15s, background .15s;
+}
+.journey-skip:hover { color: var(--text); background: rgba(255, 255, 255, 0.08); }
+
+.journey-progress { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--border); }
+.journey-progress span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transform-origin: left;
+  transform: scaleX(0);
+  opacity: 0.7;
+}
+
+@media (max-width: 760px) {
+  .journey-text,
+  .journey-final {
+    top: auto;
+    bottom: 76px;
+    right: 16px;
+    left: 16px;
+    width: auto;
+    translate: none;
+  }
+  .journey-text h2 { font-size: 30px; }
+  .journey-skip { bottom: 22px; }
+}

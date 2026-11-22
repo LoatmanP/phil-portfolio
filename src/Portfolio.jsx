@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import TimePreferences from './TimePreferences';
 import ChoiceAnomalies from './ChoiceAnomalies';
+import Journey from './journey/Journey';
 import './styles.css';
 
 const EMAIL = 'loatmanp@gmail.com';
@@ -245,6 +246,8 @@ const Portfolio = () => {
   }, [paletteOpen]);
 
   const renderAbout = () => (
+    <>
+    <Journey />
     <div className="container">
       <section>
         <span className="status-pill">
@@ -252,11 +255,11 @@ const Portfolio = () => {
           Managing Director of Artificial Intelligence, Plymouth Rock Assurance
         </span>
         <h1 className="hero-title">
-          Building foundational AI.
-          <span className="hero-title-muted">Grounded in how people decide.</span>
+          Phil Loatman
+          <span className="hero-title-muted">AI leader and cognitive scientist.</span>
         </h1>
         <p className="hero-sub">
-          I'm <strong>Phil Loatman, PhD</strong>, an AI leader and cognitive scientist. I design the platforms, evaluation frameworks, and agentic systems that turn frontier models into dependable enterprise capabilities.
+          I design the platforms, evaluation frameworks, and agentic systems that turn frontier models into dependable enterprise capabilities.
         </p>
         <div className="hero-actions">
           <button className="btn primary" onClick={() => switchTab('experience')}>View experience</button>
@@ -302,6 +305,7 @@ const Portfolio = () => {
         </div>
       </div>
     </div>
+    </>
   );
 
   const renderExperience = () => (
